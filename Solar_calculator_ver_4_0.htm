@@ -1,5 +1,5 @@
 
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Solar calculator ver 4.0</title>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Solar calculator ver 4.0</title>
 <meta content="asheshwor(asheshwor@gmail.com)" name="AUTHOR" url="asheshwor.com.np">
 <meta content="azimuth, altitude, hour angle, sun position calculator, sun angle calculator, solar calculator, declination, solar angles, equation of time, inclination, java scripts" name="KEYWORDS">
 <meta content="This script calculates various solar angles like altitude, azimuth, horizontal shadow angle etc. and also gives the value of sunrise time, sunset time, sunrise azimuth angles etc." name="DESCRIPTION">
@@ -132,13 +132,13 @@ html=html+add2table("Longitude",getLongText());
 html=html+add2table("Julian Date",getNDY());
 html=html+add2table("Equation of Time",(getEQT(getNDY())+" minutes"));
 html=html+add2table("Local correction",fix(getLocalCor()*60,2)+" minutes");
-html=html+add2table("Declination of earth",fix(getDEC(),2)+"°");
+html=html+add2table("Declination of earth",fix(getDEC(),2)+"Â°");
 html=html+add2table("Horizontal angles measured with",northType());
 html=html+add2table("Magnetic Declination",magDecText());
 html=html+add2table("Local Sunrise Time",breakTime(rt)+" hrs");
-html=html+add2table("Sunrise Azimuth",fix(getAZI(getSRT(getSRH()))+getCorAng(),2)+"°");
+html=html+add2table("Sunrise Azimuth",fix(getAZI(getSRT(getSRH()))+getCorAng(),2)+"Â°");
 html=html+add2table("Local Sunset Time",breakTime(st)+" hrs");
-html=html+add2table("Sunset Azimuth",fix(getAZI(getSST(getSRT(getSRH())))+getCorAng(),2)+"°");
+html=html+add2table("Sunset Azimuth",fix(getAZI(getSST(getSRT(getSRH())))+getCorAng(),2)+"Â°");
 TST=getSST(getSRT(getSRH()))-getSRT(getSRH());
 html=html+add2table("Total Sun Hours",breakHour(TST)+breakMinutes(TST));
 html=html+add2table("Wall azimuth angle",document.solarCalc.wall.value*1);
@@ -148,7 +148,7 @@ rate=((document.solarCalc.sample.options[document.solarCalc.sample.selectedIndex
 html=html+"</table>";
 html=html+"<center><h5>Table of solar angles every "+fix(rate*60,0)+" minutes</center></h5>";
 html=html+"<TABLE WIDTH=460 ALIGN=center BORDER=1 CELLSPACING=0 CELLPADDING=2>";
-html=html+addIn("<b>Time</b>","<b>Azimuth ( ° )</b>","<b>Altitude ( ° )</b>","<b>HSA ( ° )</b>","<b>VSA ( ° )</b>");
+html=html+addIn("<b>Time</b>","<b>Azimuth ( Â° )</b>","<b>Altitude ( Â° )</b>","<b>HSA ( Â° )</b>","<b>VSA ( Â° )</b>");
 
 //altitude filter
 lhr=Math.floor(rt);
@@ -330,7 +330,7 @@ else
 	{
 	dc="North";
 	}
-return lat+" ° "+dc;
+return lat+" Â° "+dc;
 }
 function getLongText()
 {
@@ -343,7 +343,7 @@ else
 	{
 	dc="East";
 	}
-return lon+" ° "+dc;
+return lon+" Â° "+dc;
 }
 function northType()
 {
@@ -368,12 +368,12 @@ else
 	{
 	dc="East";
 	}
-return tex+" ° "+dc;
+return tex+" Â° "+dc;
 }
 function incText()
 {
 tex=document.solarCalc.inc.value*1;
-typ=tex+" ° with horizon"
+typ=tex+" Â° with horizon"
 if (tex=="90")
 	{
 	typ="Vertical";
@@ -392,12 +392,12 @@ var HSA=val;
 if ((val<270)&&(val>90))
 	{
 	HSA=HSA+corAng;
-	output=fix(HSA,1)+"°, * Wall in Shade *";
+	output=fix(HSA,1)+"Â°, * Wall in Shade *";
 	}
 else
 	{
 	HSA=HSA+corAng;
-	output=fix(HSA,1)+"°";
+	output=fix(HSA,1)+"Â°";
 	}
 	return output;
 }
@@ -645,25 +645,25 @@ AddText("North taken as positive and South as negative\r\n");
 AddText("Julian Date ............: "+(NDY));
 AddText("Equation of Time........: "+getEQT(NDY)+" minutes");
 AddText(		"Local correction........: "+fix(localCor2,2)+" minutes");
-//AddText("Hour angle..............: "+fix(HRA,2)+"°");
-AddText("Declination of earth....: "+fix(DEC,2)+"°");
-//AddText("Sunrise Hour Angle......: "+fix(SRH,2)+"°");
+//AddText("Hour angle..............: "+fix(HRA,2)+"Â°");
+AddText("Declination of earth....: "+fix(DEC,2)+"Â°");
+//AddText("Sunrise Hour Angle......: "+fix(SRH,2)+"Â°");
 AddText("Local Sunrise Time......: "+breakTime(LSRT)+" hrs");
 //AddText("Sunrise Time(SOLAR).....: "+breakTime(SRT)+" am");
-AddText("Sunrise Azimuth.........: "+fix(SRA+corAng,2)+"°");
+AddText("Sunrise Azimuth.........: "+fix(SRA+corAng,2)+"Â°");
 AddText("Local Sunset Time.......: "+breakTime(LSST)+" hrs");
 //AddText("Sunset Time(SOLAR)......: "+breakTime(SST)+" pm");
-AddText("Sunset Azimuth..........: "+fix(SSA,2)+"°");
+AddText("Sunset Azimuth..........: "+fix(SSA,2)+"Â°");
 //n1=getAZI(getSST(getSRT(getSRH())))+corAng;
 //n1=getAZI(getSRT(getSRH()))+corAng;
-//AddText("Sunset Azimuth(new).....: "+fix(n1,2)+"°");
+//AddText("Sunset Azimuth(new).....: "+fix(n1,2)+"Â°");
 AddText("Total Sun Hours.........: "+breakHour(TST)+breakMinutes(TST));
-AddText("Altitude................: "+fix(ALT,2)+"°");
-AddText("Azimuth Angle...........: "+fix(AZI,2)+"°");
-AddText("Wall azimuth angle......: "+fix(trueWALL2,2)+"°");
+AddText("Altitude................: "+fix(ALT,2)+"Â°");
+AddText("Azimuth Angle...........: "+fix(AZI,2)+"Â°");
+AddText("Wall azimuth angle......: "+fix(trueWALL2,2)+"Â°");
 AddText("Horizontal shadow angle.: "+isShade(HSA));
-AddText("Vertical shadow angle...: "+fix(VSA,2)+"°");
-AddText("Angle of incidence......: "+fix(INC,2)+"°");
+AddText("Vertical shadow angle...: "+fix(VSA,2)+"Â°");
+AddText("Angle of incidence......: "+fix(INC,2)+"Â°");
 AddText("Cosine factor...........: "+fix(CF,5));
 AddText(line);
 AddText("Generated by Solar Calculator [ver 4.0]");
@@ -687,21 +687,21 @@ html=html+add2table("Longitude",getLongText());
 html=html+add2table("Julian Date",NDY);
 html=html+add2table("Equation of Time",(getEQT(NDY)+" minutes"));
 html=html+add2table("Local correction",fix(localCor2,2)+" minutes");
-html=html+add2table("Declination of earth",fix(DEC,2)+"°");
+html=html+add2table("Declination of earth",fix(DEC,2)+"Â°");
 html=html+add2table("Horizontal angles measured with",northType());
 html=html+add2table("Magnetic Declination",magDecText());
 html=html+add2table("Local Sunrise Time",breakTime(LSRT)+" hrs");
-html=html+add2table("Sunrise Azimuth",fix(SRA,2)+"°");
+html=html+add2table("Sunrise Azimuth",fix(SRA,2)+"Â°");
 html=html+add2table("Local Sunset Time",breakTime(LSST)+" hrs");
-html=html+add2table("Sunset Azimuth",fix(SSA,2)+"°");
+html=html+add2table("Sunset Azimuth",fix(SSA,2)+"Â°");
 html=html+add2table("Total Sun Hours",breakHour(TST)+breakMinutes(TST));
-html=html+add2table("Altitude",fix(ALT,2)+"°");
-html=html+add2table("Azimuth Angle",fix(AZI,2)+"°");
-html=html+add2table("Wall azimuth angle",fix(trueWALL2,2)+"°");
+html=html+add2table("Altitude",fix(ALT,2)+"Â°");
+html=html+add2table("Azimuth Angle",fix(AZI,2)+"Â°");
+html=html+add2table("Wall azimuth angle",fix(trueWALL2,2)+"Â°");
 html=html+add2table("Receiving plane",incText());
 html=html+add2table("Horizontal shadow angle",isShade(HSA));
-html=html+add2table("Vertical shadow angle",fix(VSA,2)+"°");
-html=html+add2table("Angle of incidence",fix(INC,2)+"°");
+html=html+add2table("Vertical shadow angle",fix(VSA,2)+"Â°");
+html=html+add2table("Angle of incidence",fix(INC,2)+"Â°");
 html=html+add2table("Cosine factor",fix(CF,5));
 html=html+"</table>";
 html=html+footer;
@@ -859,7 +859,7 @@ window.status=" * F I N I S H E D *  AND  * R E A D Y *";
 <option value="3">+ 03</option>
 <option value="2">+ 02</option>
 <option value="1">+ 01</option>
-<option value="0">± 0</option>
+<option value="0">Â± 0</option>
 <option value="-1">- 01</option>
 <option value="-2">- 02</option>
 <option value="-3">- 03</option>
@@ -882,24 +882,24 @@ window.status=" * F I N I S H E D *  AND  * R E A D Y *";
 		</td>
 	</tr>
 	<tr>
-		<td><a class="tx">* Latitude:</a> <input name="latBox" size="7" value="27.8"> <a class="tx">° </a><input checked="" name="northSouth" type="radio"><a class="tx">North</a> <input name="northSouth" type="radio"><a class="tx">South</a></td>
+		<td><a class="tx">* Latitude:</a> <input name="latBox" size="7" value="27.8"> <a class="tx">Â° </a><input checked="" name="northSouth" type="radio"><a class="tx">North</a> <input name="northSouth" type="radio"><a class="tx">South</a></td>
 	</tr>
 	<tr>
-		<td><a class="tx">* Longitude:</a> <input name="longBox" size="7" value="85.1"> <a class="tx">° </a><input checked="" name="eastWest" type="radio"><a class="tx">East</a> <input name="eastWest" type="radio"><a class="tx">West</a></td>
+		<td><a class="tx">* Longitude:</a> <input name="longBox" size="7" value="85.1"> <a class="tx">Â° </a><input checked="" name="eastWest" type="radio"><a class="tx">East</a> <input name="eastWest" type="radio"><a class="tx">West</a></td>
 	</tr>
 	<tr>
-		<td><a class="tx">* Wall Azimuth angle:</a> <input name="wall" size="6" value="180"> <a class="tx">° </a>
+		<td><a class="tx">* Wall Azimuth angle:</a> <input name="wall" size="6" value="180"> <a class="tx">Â° </a>
 <a class="tx"> , With respect to</a><br>
       <input checked="" name="trueMag" type="radio"><a class="tx">True North, or </a><input name="trueMag" type="radio"><a class="tx">Magnetic North</a>
-<a class="sm">(e.g. 0° for North facing wall and going clockwise-90° for East facing wall and so on)</a></td>
+<a class="sm">(e.g. 0Â° for North facing wall and going clockwise-90Â° for East facing wall and so on)</a></td>
 </tr>
 <tr><td>
-<a class="tx">* Magnetic Declination: </a><input name="mDec" size="7" value="0"> <a class="tx">° </a>
+<a class="tx">* Magnetic Declination: </a><input name="mDec" size="7" value="0"> <a class="tx">Â° </a>
 <input checked="" name="decEastWest" type="radio"><a class="tx">East</a> <input name="decEastWest" type="radio"><a class="tx">West</a>
 </td></tr>
 <tr>
-<td><a class="tx">* Inclination of receiving plane to the horizon:</a> <input name="inc" size="5" value="90"> <a class="tx">° </a>
-<a class="sm">(e.g. 90° for vertical wall, 0° for horizontal plane)</a></td>
+<td><a class="tx">* Inclination of receiving plane to the horizon:</a> <input name="inc" size="5" value="90"> <a class="tx">Â° </a>
+<a class="sm">(e.g. 90Â° for vertical wall, 0Â° for horizontal plane)</a></td>
 </tr>
 <tr>
 <td><a class="tx">* Output angles with respect to:</a> <input checked="" name="outAng" type="radio"><a class="tx">True North, or </a><input name="outAng" type="radio"><a class="tx">Magnetic North</a></td>
@@ -932,7 +932,7 @@ window.status=" * F I N I S H E D *  AND  * R E A D Y *";
 </tr><tr>
 <td><textarea class="ta" name="solution" rows="25" cols="54">The solution will appear in this area.</textarea> </td>
 </tr>
-<tr class="sm" align="center"><td>Code: 
+<tr class="sm" align="center"><td>Source repository: <a href="https://github.com/asheshwor/solar-calculator">https://github.com/asheshwor/solar-calculator</a>
 <hr size="1" width="460"></td></tr>
 </tbody></table>
 </form>
