@@ -4,6 +4,18 @@ This script calculates various solar angles like altitude, azimuth, horizontal s
 
 The JavaScript code is very old but it still seems to work on modern browsers. It was developed when I was studying architecture at uni for quick solar calculations to aid in designing of shading devices. I still get an email every year or so regarding the code, thus proving that this is still being used (via external sites). I'm sharing the code for those who want to tinker with it.
 
+## Demo
+
+[demo at github] (http://asheshwor.github.io/solar-calculator/)
+
+## Screenshot
+
+![page screenshot](img/solar.png)
+<small>Screenshot of main page</small>
+
+
+## History
+
 First version	: 6th August 2000
 
 Last update	: 27th September 2001
@@ -12,10 +24,10 @@ Bootstrap framework: September 2016 - incomplete
 
 ## License:
 
-Code: https://github.com/asheshwor/solar-calculator/blob/master/LICENSE
+License for code: [License file] (https://github.com/asheshwor/solar-calculator/blob/master/LICENSE)
 
-See individual license for external tools used.
+See individual license(s) for external tools used if any.
 
 ## Attribution:
 
-Styling framework: twitter bootstrap http://getbootstrap.com/
+Styling framework: [twitter bootstrap] (http://getbootstrap.com/)
