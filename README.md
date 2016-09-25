@@ -10,8 +10,7 @@ The JavaScript code is very old but it still seems to work on modern browsers. I
 
 ## Screenshot
 
-![page screenshot](img/solar2.png)
-<small>Screenshot of main page</small>
+![page screenshot](img/screenshot.png)
 
 ## History
 
