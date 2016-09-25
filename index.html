@@ -8,11 +8,12 @@
     <meta content="asheshwor(asheshwor@gmail.com)" name="AUTHOR" url="asheshwor.com.np">
     <meta content="azimuth, altitude, hour angle, sun position calculator, sun angle calculator, solar calculator, declination, solar angles, equation of time, inclination, java scripts" name="KEYWORDS">
     <meta content="This script calculates various solar angles like altitude, azimuth, horizontal shadow angle etc. and also gives the value of sunrise time, sunset time, sunrise azimuth angles etc." name="DESCRIPTION">
-    <script src="code/solar.js"></script>
+    <script src="code/solar2.js"></script>
     <title>Solar Calculator</title>
-
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+<link href="css/sticky-footer.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,8 +25,9 @@
   <body onload="window.status=&#39; * R E A D Y * &#39;;">
 <div class="container">
     <h1>Solar calculator</h1>
+    <p>Enter details below. Default location has been set for Adelaide, Australia (Latitude: 34.93 South, Longitude: 138.60 East).</p>
 <form name="solarCalc" class="form-inline">
-<table width="460" border="0" cellspacing="2" cellpadding="2" align="left">
+<table width="560" border="0" cellspacing="2" cellpadding="2" align="left">
 	<tbody>
 	<tr>
 		<td>Date: <select name="day" class="form-control">
@@ -62,10 +64,7 @@
 <option value="31">31</option>
 </select>
 of
-<select name="month" class="form-control"><option value="0" selected="">January</option> <option value="31">February</option> <option value="59">March</option> <option value="90">April</option> <option value="120">May</option> <option value="151">June</option> <option value="181">July</option> <option value="212">August</option> <option value="243">September</option> <option value="273">October</option> <option value="304">November</option> <option value="334">December</option></select></td>
-	</tr>
-	<tr>
-		<td>Time:
+<select name="month" class="form-control"><option value="0" selected="">January</option> <option value="31">February</option> <option value="59">March</option> <option value="90">April</option> <option value="120">May</option> <option value="151">June</option> <option value="181">July</option> <option value="212">August</option> <option value="243">September</option> <option value="273">October</option> <option value="304">November</option> <option value="334">December</option></select> Time:
 <select name="hour" class="form-control">
 <option value="4">04</option>
 <option value="5">05</option>
@@ -145,11 +144,10 @@ of
 <option value="57">57</option>
 <option value="58">58</option>
 <option value="59">59</option>
-</select> hours
-</td>
+</select> hours</td>
 	</tr>
 	<tr>
-		<td>Time Zone: 
+		<td>Time Zone:
 <select name="tzHour" class="form-control">
 	<option value="11">+ 11</option>
 <option value="10">+ 10</option>
@@ -185,30 +183,31 @@ of
 		</td>
 	</tr>
 	<tr>
-		<td>Latitude: <input name="latBox" value="27.8" class="form-control"> ° <input checked="" name="northSouth" type="radio">North <input name="northSouth" type="radio">South</td>
+		<td>Latitude: <input name="latBox" value="34.93" class="form-control"> ° <input name="northSouth" type="radio">North <input name="northSouth" type="radio" checked="">South</td>
 	</tr>
 	<tr>
-		<td>Longitude: <input name="longBox" value="85.1"class="form-control"> ° <input checked="" name="eastWest" type="radio">East <input name="eastWest" type="radio">West</td>
+		<td>Longitude: <input name="longBox" value="138.60"class="form-control"> ° <input checked="" name="eastWest" type="radio">East <input name="eastWest" type="radio">West</td>
 	</tr>
 	<tr>
-		<td>Wall Azimuth angle: <input name="wall" size="6" value="180" class="form-control"> ° 
+		<td>Wall Azimuth angle: <input name="wall" size="6" value="180" class="form-control"> °
  , With respect to<br>
       <input checked="" name="trueMag" type="radio" class="form-control">True North, or <input name="trueMag" type="radio" class="form-control">Magnetic North
 (e.g. 0° for North facing wall and going clockwise-90° for East facing wall and so on)</td>
 </tr>
 <tr><td>
-Magnetic Declination:<input name="mDec" size="7" value="0" class="form-control"> ° 
-<input checked="" name="decEastWest" type="radio">East <input name="decEastWest" type="radio" class="form-control">West
+Magnetic Declination:<input name="mDec" size="7" value="0" class="form-control"> °
+<input checked="" name="decEastWest" type="radio" class="form-control">East <input name="decEastWest" type="radio" class="form-control">West
 </td></tr>
 <tr>
-<td>Inclination of receiving plane to the horizon: <input name="inc" size="5" value="90" class="form-control"> ° 
+<td>Inclination of receiving plane to the horizon: <input name="inc" size="5" value="90" class="form-control"> °
 (e.g. 90° for vertical wall, 0° for horizontal plane)</td>
 </tr>
 <tr>
 <td>Output angles with respect to: <input checked="" name="outAng" type="radio" class="form-control">True North, or <input name="outAng" type="radio" class="form-control">Magnetic North</td>
 </tr>
 <tr><td>
-<input type="button" id="ams" class="btn btn-lg btn-success" value="Table for whole day" onclick="genTable();">
+  <input type="checkbox" name="htmlToo" class="form-control" checked="">
+  Output table for solar angles
 with data every
 <select name="sample" class="form-control">
 <option value="5">5</option>
@@ -222,23 +221,23 @@ minutes
 </td></tr>
 <tr>
 <td>
-
-<input type="checkbox" name="htmlToo" class="form-control">
-
-Output solutions in HTML too. 
-</td>
-</tr>
-<tr>
-<td><input type="button" onclick="findSolution();" class="btn btn-lg btn-primary" value="Generate Solution" id="button1">
+  <input type="button" id="ams" class="btn btn-lg btn-primary" value="Generate table of solar angles" onclick="genTable();">
+  <!-- <input type="button" onclick="findSolution();" class="btn btn-lg btn-primary" value="Generate Solution" id="button1"> -->
 <input type="button" class="btn btn-lg btn-danger" value="Reset" onclick="resetForm();" id="button2" name="button2"></td>
-</tr><tr>
-<td><textarea class="form-control" name="solution" rows="25" cols="54" style="font-family:monospace;">The solution will appear in this area.</textarea> </td>
 </tr>
-<tr align="center"><td>Source repository: <a href="https://github.com/asheshwor/solar-calculator">https://github.com/asheshwor/solar-calculator</a></td></tr>
-</tbody></table>
+</tbody>
+</table>
 </form>
-      </div>
-
+</div>
+<br>
+<div class="container">
+  <div id="outputhtml" class="jumbotron">Output will appear here.</div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted"><a href="https://github.com/asheshwor/solar-calculator">Code</a> by Asheshwor. Distributed under the terms of the <a href="https://github.com/asheshwor/solar-calculator/blob/master/LICENSE">MIT license</a></p>
+  </div>
+</footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

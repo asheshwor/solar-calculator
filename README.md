@@ -13,13 +13,10 @@ The JavaScript code is very old but it still seems to work on modern browsers. I
 ![page screenshot](img/solar2.png)
 <small>Screenshot of main page</small>
 
-
 ## History
 
 First version	: 6th August 2000
-
 Last update	: 27th September 2001
-
 Bootstrap framework: September 2016 - incomplete
 
 ## License:
