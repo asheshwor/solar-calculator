@@ -10,7 +10,7 @@ Check it live at [asheshwor.github.io/solar-calculator] (http://asheshwor.github
 
 ## Screenshot
 
-![page screenshot] (img/screenshot.png)
+![page screenshot](img/screenshot.png)
 
 ## History
 
