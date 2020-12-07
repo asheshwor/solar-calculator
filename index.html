@@ -30,7 +30,7 @@
 <table width="560" border="0" cellspacing="2" cellpadding="2" align="left">
 	<tbody>
 	<tr>
-		<td>Date: <select name="day" class="form-control">
+		<td>Date: <select name="day" id= "selectDay" class="form-control">
 <option value="1" selected="">01</option>
 <option value="2">02</option>
 <option value="3">03</option>
@@ -64,8 +64,8 @@
 <option value="31">31</option>
 </select>
 of
-<select name="month" class="form-control"><option value="0" selected="">January</option> <option value="31">February</option> <option value="59">March</option> <option value="90">April</option> <option value="120">May</option> <option value="151">June</option> <option value="181">July</option> <option value="212">August</option> <option value="243">September</option> <option value="273">October</option> <option value="304">November</option> <option value="334">December</option></select> Time:
-<select name="hour" class="form-control">
+<select name="month" id = "selectMonth" class="form-control"><option value="0" selected="" >January</option> <option value="31">February</option> <option value="59">March</option> <option value="90">April</option> <option value="120">May</option> <option value="151">June</option> <option value="181">July</option> <option value="212">August</option> <option value="243">September</option> <option value="273">October</option> <option value="304">November</option> <option value="334">December</option></select> Time:
+<select name="hour" id = "selectHour" class="form-control">
 <option value="4">04</option>
 <option value="5">05</option>
 <option value="6">06</option>
@@ -83,7 +83,7 @@ of
 <option value="18">18</option>
 <option value="19">19</option>
 <option value="20">20</option></select><b> :</b>
-<select name="min" class="form-control">
+<select name="min" id = "selectMinute" class="form-control">
 <option value="0" selected="">00</option>
 <option value="1">01</option>
 <option value="2">02</option>
@@ -144,8 +144,7 @@ of
 <option value="57">57</option>
 <option value="58">58</option>
 <option value="59">59</option>
-</select> hours</td>
-	</tr>
+</select> hours<input type="button" id="btnDate" class="btn btn-lg btn-success" value="Use today's date" onclick="getDate();"></td></tr>
 	<tr>
 		<td>Time Zone:
 <select name="tzHour" class="form-control">

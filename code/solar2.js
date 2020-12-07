@@ -3,6 +3,7 @@
 //* First version	: 6th August 2000
 //* Last update		: 27nd September 2001
 //* Twitter bootstrap styling: September 2016
+//* Button tweek for getting current date added December 2020
 //* This is a quite old script. Years ago, a handful of sites featured this code. At least one of them
 //* 	is still operational and every year or so I receive an email regarding the page so I'm sharing the code
 //* 	for those who are interested.
@@ -86,6 +87,20 @@ else
 }
 sumText="<tr align='center' bgcolor='"+color+"'><td>"+col1+"</td><td>"+col2+"</td><td>"+col3+"</td><td>"+col4+"</td><td>"+col5+"</td></tr>";
 return sumText;
+}
+//Function to pull today's date
+function getDate()
+{
+	var today = new Date();
+	var dd = String(today.getDate());//.padStart(2, '0');
+	var mm = String(today.getMonth() + 0);//.padStart(2, '0');
+	var hh = today.getHours();// + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
+	var nn = today.getMinutes();
+	//now push date to appropriate text boxes
+	document.getElementById("selectDay").value = dd;
+	document.getElementById("selectMonth").selectedIndex = mm;
+	//document.getElementById("selectHour").value = hh;
+	//document.getElementById("selectMinute").value = nn;
 }
 //Function to generate the HTML tables
 function genTable()
